@@ -5,8 +5,8 @@ let config = {}
 config.loginHost = 'http://127.0.0.1:7001'
 config.downloadHost = 'http://127.0.0.1:7001'
 axios.defaults.timeout = 15000;
-axios.defaults.xsrfHeaderName = 'x-csrf-token';
-axios.defaults.xsrfCookieName = 'csrfToken';
+// axios.defaults.xsrfHeaderName = 'x-csrf-token';
+// axios.defaults.xsrfCookieName = 'csrfToken';
 // 添加请求拦截器
 axios.interceptors.request.use((config)=>{
     // 在发送请求之前做些什么

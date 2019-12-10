@@ -44,7 +44,9 @@ module.exports = app => {
   ];
 
   exports.security = {
+    // todo 暂时关闭
     csrf: {
+      enable: false,
       ignoreJSON: false,
       cookieName: 'csrfToken',
       sessionName: 'csrfToken',
