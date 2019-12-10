@@ -9,7 +9,7 @@
   @import "index.css";
 </style>
 <script>
-  import axios from 'axios/index'
+  import axios from 'axios'
   export default {
     components: {
 

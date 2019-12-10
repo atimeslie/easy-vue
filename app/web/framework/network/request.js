@@ -22,12 +22,12 @@ axios.interceptors.response.use((response)=>{
     if(response.status === 200){
         return response.data;
     }
-    if (response.status == 302) {
-        // console.log('hello')
-        let targetUrl = window.location.href;
-        window.location.href = 'http://venus.sogou-inc.com/public/sso/#/?returnUrl='+config.loginHost+'/public/parseUser&targetUrl=' + targetUrl;
-        return
-    }
+    // if (response.status == 302) {
+    //     // console.log('hello')
+    //     let targetUrl = window.location.href;
+    //     window.location.href = 'http://venus.sogou-inc.com/public/sso/#/?returnUrl='+config.loginHost+'/public/parseUser&targetUrl=' + targetUrl;
+    //     return
+    // }
     return response.data;
 },(error)=>{
     // 对响应错误做点什么
@@ -41,18 +41,19 @@ axios.interceptors.response.use((response)=>{
     }
 })
 
-export default {
-  post(url, json, store = {}) {
-    const { state = { origin: '' } } = store;
-    const headers = {};
-    if (EASY_ENV_IS_NODE) {
-      headers['x-csrf-token'] = state.csrf;
-      headers.Cookie = `csrfToken=${state.csrf}`;
-    }
-    return axios.post(`${state.origin}${url}`, json, { headers });
-  },
-  get(url, store = {}) {
-    const { state = { origin: '' } } = store;
-    return axios.get(`${state.origin}${url}`);
-  }
-};
+export default  axios
+// export default {
+//   post(url, json, store = {}) {
+//     const { state = { origin: '' } } = store;
+//     const headers = {};
+//     if (EASY_ENV_IS_NODE) {
+//       headers['x-csrf-token'] = state.csrf;
+//       headers.Cookie = `csrfToken=${state.csrf}`;
+//     }
+//     return axios.post(`${state.origin}${url}`, json, { headers });
+//   },
+//   get(url, store = {}) {
+//     const { state = { origin: '' } } = store;
+//     return axios.get(`${state.origin}${url}`);
+//   }
+// };

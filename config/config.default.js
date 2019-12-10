@@ -47,14 +47,14 @@ module.exports = app => {
     // todo 暂时关闭
     csrf: {
       enable: false,
-      ignoreJSON: false,
-      cookieName: 'csrfToken',
-      sessionName: 'csrfToken',
-      headerName: 'x-csrf-token'
+      // ignoreJSON: false,
+      // cookieName: 'csrfToken',
+      // sessionName: 'csrfToken',
+      // headerName: 'x-csrf-token'
     },
-    xframe: {
-      enable: false,
-    },
+    // xframe: {
+    //   enable: false,
+    // },
   };
 
   return exports;

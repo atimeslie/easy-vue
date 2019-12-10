@@ -24,7 +24,7 @@ module.exports = class IndexController extends egg.Controller {
       const { ctx } = this
       let url = 'http://api.feedback.sogou' +"/public/parseUser?passport="+ encodeURIComponent(ctx.query.passport) + "&targetUrl=" +encodeURIComponent(ctx.query.targetUrl)
       const { status, headers, res } = await ctx.curl(url, {
-          method: 'GET',
+          method: ctx.method,
           contentType: ctx.method.toUpperCase() === 'POST' ? 'json' : undefined,
           dataType: 'json',
           streaming: true,
@@ -34,7 +34,7 @@ module.exports = class IndexController extends egg.Controller {
           ctx.cookies.set("SESSION", headers["set-cookie"][0].split(";")[0].replace(/SESSION=/,""));
       }
       console.log('headers["set-cookie"][0].split(";")[0].replace(/SESSION=/,"")', headers["set-cookie"][0].split(";")[0].replace(/SESSION=/,""))
-      console.log(headers, 111111111111111111111)
+      console.log(headers, 111133311)
       let targetUrl = headers.location;
       ctx.unsafeRedirect(targetUrl)
   }
