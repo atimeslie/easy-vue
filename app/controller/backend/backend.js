@@ -7,8 +7,6 @@ module.exports = class BackendController extends egg.Controller {
         const requestPath = ctx.request.path
         let url = `http://${ctx.app.config.apiHost}${requestPath}${querystring}`
         const userInfo = {
-            sgid: ctx.sgid,
-            device_id: ctx.device_id,
         }
         const { status, headers, res } = await ctx.curl(url, {
             method: ctx.method,
@@ -19,7 +17,10 @@ module.exports = class BackendController extends egg.Controller {
             contentType: ctx.method.toUpperCase() === 'POST' ? 'json' : undefined,
             dataType: 'json',
             streaming: true,
+            cookie:ctx.request.headers.cookie
         })
+        // console.log(res,status,111111111111111111111111111111)
+        // console.log(ctx.request, 111111111111111111)
         ctx.type = headers['content-type'] || headers['Content-Type']
         ctx.status = status
         ctx.body = res

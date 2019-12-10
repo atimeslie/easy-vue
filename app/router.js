@@ -11,5 +11,6 @@ module.exports = app => {
   // router.get('/admin/api/article/del/:id', controller.admin.admin.del);
   // router.get('/admin/api/article/:id', controller.admin.admin.detail);
   // router.get('/admin(/.+)?', controller.admin.admin.home);
-  router.all(/^\/europa\/.*/, controller.backend.backend.apis)
+  router.all(/^\/user\/.*/, controller.backend.backend.apis)
+    router.get('/public/parseUser', controller.index.index.setCookie)
 };
