@@ -1,4 +1,4 @@
-'usestrict';
+'use strict';
 const egg = require('egg');
 module.exports = class IndexController extends egg.Controller {
 
@@ -28,7 +28,7 @@ module.exports = class IndexController extends egg.Controller {
           contentType: ctx.method.toUpperCase() === 'POST' ? 'json' : undefined,
           dataType: 'json',
           streaming: true,
-          cookie: ctx.request.headers.cookie
+          // cookie: ctx.request.headers.cookie
       })
       if (headers['set-cookie']) {
           ctx.cookies.set("SESSION", headers["set-cookie"][0].split(";")[0].replace(/SESSION=/,""));

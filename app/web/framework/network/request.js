@@ -8,6 +8,10 @@ axios.defaults.timeout = 15000;
 // axios.defaults.xsrfHeaderName = 'x-csrf-token';
 // axios.defaults.xsrfCookieName = 'csrfToken';
 // 添加请求拦截器
+console.log(EASY_ENV_IS_DEV)
+console.log(EASY_ENV_IS_TEST)
+console.log(EASY_ENV_IS_PROD)
+console.log(process.env.NODE_ENV,4444)
 axios.interceptors.request.use((config)=>{
     // 在发送请求之前做些什么
     return config
