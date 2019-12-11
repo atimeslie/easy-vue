@@ -6,6 +6,7 @@
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "clean": "easy clean all",
+    "test": "easy build test",
     "build": "easy build prod",
     "start": "egg-scripts start --port 7001 --workers 4",
     "backend": "nohup egg-scripts start --port 7001 --workers 4 &",

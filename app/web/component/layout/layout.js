@@ -6,13 +6,13 @@ export default function createLayout(name, components, tpl) {
     components,
     computed: {
       vTitle() {
-        return this.$root.title || this.title || 'Egg + Vue SSR/CSR 工程化方案';
+        return this.$root.title || this.title || '小p服务号';
       },
       vKeywords() {
         return this.$root.keywords || this.keywords || 'easyjs, egg vue ssr, egg, typescript, vue, webpack, server side render';
       },
       vDescription() {
-        return this.$root.description || this.description || 'Egg Vue SSR/CSR 服务端渲染';
+        return this.$root.description || this.description || '指标体系';
       },
       baseClass() {
         return this.$root.baseClass;

@@ -8,10 +8,13 @@ module.exports = class IndexController extends egg.Controller {
 
   async setCookie() {
       const { ctx } = this
-      let url = 'http://api.feedback.sogou' +"/public/parseUser?passport="+ encodeURIComponent(ctx.query.passport) + "&targetUrl=" +encodeURIComponent(ctx.query.targetUrl)
+      let url = `http://${ctx.app.config.apiHost}` +"/public/parseUser?passport="+ encodeURIComponent(ctx.query.passport) + "&targetUrl=" +encodeURIComponent(ctx.query.targetUrl)
       const { status, headers, res } = await ctx.curl(url, {
           method: ctx.method,
           contentType: ctx.method.toUpperCase() === 'POST' ? 'json' : undefined,
+          data: ['POST', 'PUT'].includes(ctx.method.toUpperCase()) ? {
+              ...ctx.request.body,
+          } : null,
           dataType: 'json',
       })
       if (headers['set-cookie']) {

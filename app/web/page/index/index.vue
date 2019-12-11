@@ -1,5 +1,5 @@
 <template>
-  <layout description="vue server side render" keywords="egg, vue, webpack, server side render">
+  <layout>
     <div>
         <mt-button type="default"  size="large">default</mt-button>
         <mt-button type="primary" size="large">primary</mt-button>
