@@ -1,20 +1,26 @@
 <template>
   <layout>
     <div>
+        <HEAD></HEAD>
         <mt-button type="default"  size="large">default</mt-button>
         <mt-button type="primary" size="large">primary</mt-button>
         <mt-button type="danger" size="large">danger</mt-button>
+        <div class="test">
+            <div></div>
+        </div>
+        <div>111</div>
     </div>
   </layout>
 </template>
-<style>
-  @import "index.css";
+<style lang="scss" scoped>
+  @import "index.scss";
 </style>
 <script>
+  import HEAD from 'component/header'
   import axios from 'axios'
   export default {
     components: {
-
+        HEAD,
     },
     data(){
       return {

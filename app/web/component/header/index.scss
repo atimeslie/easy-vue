@@ -1,0 +1,9 @@
+@function pxToRem($px) {
+  @return $px / 37.5px * 1rem;
+}
+
+.head {
+  width: pxToRem(37.5px);
+  height: pxToRem(37.5px);
+  background: red;
+}

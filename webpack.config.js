@@ -6,15 +6,13 @@ module.exports = {
     'category/category': 'app/web/page/category/category.vue',
     'about/about': 'app/web/page/about/about.vue',
   },
-  cssModule: {
-      include: ['app/web/page', 'app/web/component'],
-  },
   alias: {
       app: './app',
   },
-  loaders: {
-      scss: true,
+  cssModule: {
+      include: ['app/web/page', 'app/web/component'],
   },
+  loaders:{ scss: true},
   plugins: [
     { imagemini: false }
   ]
