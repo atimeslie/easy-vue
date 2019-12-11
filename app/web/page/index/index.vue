@@ -1,8 +1,9 @@
 <template>
   <layout description="vue server side render" keywords="egg, vue, webpack, server side render">
     <div>
-        111
-        <el-button type="primary">主要按钮</el-button>
+        <mt-button type="default"  size="large">default</mt-button>
+        <mt-button type="primary" size="large">primary</mt-button>
+        <mt-button type="danger" size="large">danger</mt-button>
     </div>
   </layout>
 </template>
@@ -11,9 +12,6 @@
 </style>
 <script>
   import axios from 'axios'
-  import Vue from 'vue';
-  import { Button, Select } from 'element-ui';
-  Vue.use(Button);
   export default {
     components: {
 
