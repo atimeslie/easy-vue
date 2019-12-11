@@ -1,10 +1,10 @@
 <template>
-  <div class="testtestst">
+  <div>
     <slot name='content'></slot>
   </div>
 </template>
-<style>
-  @import 'content.css';
+<style lang="scss">
+  @import 'content.scss';
 </style>
 <script type='babel'>
   export default {

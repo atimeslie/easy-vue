@@ -5,7 +5,7 @@
           <span v-bind:class="{'admin-big': !collapse, 'admin-min': collapse }">{{ collapse ? site.name : site.description }}</span>
         </div>
         <span class="admin-header-btn" @click="sidebarToggle"><i class="el-icon-menu"></i></span>
-       
+
         <div class="right">
           <span class="admin-header-btn">
             <a v-bind:href="$t('lang.href')"><i class="el-icon-message"></i></a>
@@ -41,8 +41,11 @@
     <LeftMenu :collapse="collapse"></LeftMenu>
   </div>
 </template>
+<style lang="scss">
+    @import "./header.scss";
+</style>
 <script type="babel">
-import "./header.css";
+
 import LeftMenu from "../menu/index.vue";
 export default {
   components: {

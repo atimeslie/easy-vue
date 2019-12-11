@@ -8,11 +8,11 @@
     </div>
   </footer>
 </template>
-<style>
-  @import './footer.css';
+<style lang="scss">
+  @import 'footer.scss';
 </style>
 <script type='babel'>
   export default{
-    
+
   };
 </script>

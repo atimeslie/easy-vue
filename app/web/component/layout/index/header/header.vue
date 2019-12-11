@@ -44,8 +44,10 @@
     </header>
 </div>
 </template>
+<style lang="scss">
+    @import "./header.scss";
+</style>
 <script type="babel">
-import "./header.css";
 export default {
   components: {},
   data() {
